@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.roshan.connect3.MainActivity">
+
+    <TextView
+        android:id="@+id/circleWinNumber"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBaseline="@+id/crossWinNumber"
+        android:layout_alignBottom="@+id/crossWinNumber"
+        android:layout_toLeftOf="@+id/circle"
+        android:layout_toStartOf="@+id/circle"
+        android:text="0 :"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="42dp" />
+
+    <TextView
+        android:id="@+id/crossWinNumber"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/cross"
+        android:layout_toRightOf="@+id/cross"
+        android:text=": 0"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="42dp" />
+
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignEnd="@+id/gameGrid"
+        android:layout_alignRight="@+id/gameGrid"
+        android:layout_alignTop="@+id/cross"
+        android:clickable="false"
+        android:tag="0"
+        app:srcCompat="@drawable/naughts" />
+
+    <ImageView
+        android:id="@+id/cross"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/gameGrid"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/gameGrid"
+        android:layout_marginTop="23dp"
+        android:clickable="false"
+        android:tag="0"
+        app:srcCompat="@drawable/redcross" />
+
+    <GridLayout
+        android:id="@+id/gameGrid"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/board"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="75dp">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:clickable="true"
+            android:onClick="dropIn"
+            android:tag="0" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:clickable="true"
+            android:onClick="dropIn"
+            android:tag="1" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:clickable="true"
+            android:onClick="dropIn"
+            android:tag="2" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:onClick="dropIn"
+            android:tag="3" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:onClick="dropIn"
+            android:tag="4" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:onClick="dropIn"
+            android:tag="5" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:onClick="dropIn"
+            android:tag="6" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:onClick="dropIn"
+            android:tag="7" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:onClick="dropIn"
+            android:tag="8" />
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/playAgainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/winnerMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="17dp"
+            android:layout_weight="0.00"
+            android:text="Winner:"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/winnerImg"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignEnd="@+id/gameGrid"
+            android:layout_alignRight="@+id/gameGrid"
+            android:layout_alignTop="@+id/cross"
+            android:layout_marginLeft="0dp"
+            android:layout_weight="0.00"
+            android:clickable="true"
+            android:onClick="dropIn"
+            android:src="@drawable/cross"
+            android:tag="0" />
+
+        <Button
+            android:id="@+id/playAgainButton"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/winnerMessage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="20dp"
+            android:background="?attr/colorPrimary"
+            android:onClick="playAgain"
+            android:text="Play Again"
+            android:textColor="@android:color/background_light" />
+
+    </LinearLayout>
+
+</android.widget.RelativeLayout>
